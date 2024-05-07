@@ -3,7 +3,9 @@
 use App\Models\Post;
 //use Inertia\Inertia;
 use App\Models\User;
+use App\Models\Article;
 use App\Models\Product;
+use App\Models\Journale;
 use Illuminate\Http\Request;
 use App\Rules\ConfirmPassword;
 use Illuminate\Support\Facades\Auth;
@@ -42,12 +44,19 @@ use App\Http\Controllers\Auth\RegistrationController;
         return Inertia('Cart');
     })->name('cart.index');
     Route::get('/address', [AddresseController::class, 'index'])->name('address.index');
+    Route::get('/about',function(){
+        return inertia('About');
+    });
+    Route::get('/journal',function(){
+        $articles=Journale::all();
+        return inertia('Journal',[
+            'articles'=>$articles
+        ]);
+    });
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/address_options', [AddresseOptionsController::class, 'index'])->name('address_options.index');
-    Route::post('/address_options', [AddresseOptionsController::class, 'store'])->name('address_options.store');
-    Route::delete('/address_options/{id}', [AddresseOptionsController::class, 'destroy'])->name('address_options.destroy');
+   
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::post('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('/profile/updatePassword', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');

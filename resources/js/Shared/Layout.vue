@@ -5,42 +5,13 @@
                 <Link class="w-10 h-10 mb-3" href="/"><img src="/images/logo.png"></Link>
                 <Link class="font-bold ml-9 text-black-500 hover:underline" href="/">Home</Link>
                 <Link class="font-bold ml-6 text-black-500 hover:underline" href="/products">Products</Link>
-                <Link class="font-bold ml-6 text-black-500 hover:underline" href="/About">About</Link>
+                <Link class="font-bold ml-6 text-black-500 hover:underline" href="/journal">Journal</Link>
+                <Link class="font-bold ml-6 text-black-500 hover:underline" href="/about">About</Link>
                 <div class="ml-20">
                     <input type="text" v-model="search" placeholder="Search..."
                         class="bolder pr-80 border border-gray-300 rounded-md">
                 </div>
-                <div
-                    class="text-white ml-20 h-[50px] p-2 border-[1px] border-gray-900 rounded-sm hover:border-[1px] hover:border-gray-100 cursor-pointer">
-                    <Link v-if="$page.props.auth.user" href="/address">
-                    <div class="flex items-center justify-center">
-                        <MapMarkerOutlineIcon class="pt-2 -ml-1" fillColor="#f5f5f5" />
-
-                        <div>
-                            <div class="text-[13px] text-gray-300 font-extrabold">
-                                <div>Delivery to {{ $page.props.auth.user.name }}</div>
-                            </div>
-
-                            <div v-if="$page.props.auth.address" class="text-[15px] text-white -mt-1.5 font-extrabold">
-                                <div>{{ $page.props.auth.address.city }} {{ $page.props.auth.address.postcode }}</div>
-                            </div>
-                            <div v-else class="text-[15px] text-white -mt-1.5 font-extrabold">
-                                <div>Add address</div>
-                            </div>
-                        </div>
-                    </div>
-                    </Link>
-
-                    <div v-else class="flex items-center justify-center">
-                        <MapMarkerOutlineIcon class="pt-2 -ml-1" fillColor="#f5f5f5" />
-                        <div>
-                            <div class="text-[13px] text-gray-300 font-extrabold">
-                                <div>Hello</div>
-                                <div class="text-[15px] text-white -mt-1.5 font-extrabold">Select your address</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="ml-20">
                     <Link href="/cart" class="relative">
                     <span

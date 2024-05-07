@@ -26,7 +26,7 @@ class ProfileController extends Controller
             // Add other fields you want to validate/update
         ]);
 
-        $user->update($request->only(['name', 'email'])); // Update user info
+       // $user->update($request->only(['name', 'email'])); // Update user info
 
         return redirect()->back()->with('success', 'Profile updated successfully!');
     }
@@ -44,9 +44,9 @@ class ProfileController extends Controller
             return redirect()->back()->withErrors(['current_password' => 'The provided password does not match your current password.']);
         }
 
-        $user->update([
-            'password' => Hash::make($request->password),
-        ]);
+      //  $user->update([
+        //    'password' => Hash::make($request->password),
+        //]);
 
         return redirect()->back()->with('success', 'Password updated successfully!');
     }
@@ -57,7 +57,7 @@ class ProfileController extends Controller
 
         // You might want to perform additional actions before deleting the account
 
-        $user->delete(); // Delete the user account
+       // $user->delete(); // Delete the user account
 
         return redirect('/')->with('success', 'Your account has been deleted.');
     }
