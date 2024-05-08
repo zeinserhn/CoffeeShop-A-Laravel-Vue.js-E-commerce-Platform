@@ -2,7 +2,6 @@
     <Head>
         <title>Journal</title>
     </Head>
-    <Layout class="Layout"></Layout>
     <h1>Our Journales</h1>
     <div class="underline"></div>
     <main>
@@ -22,7 +21,7 @@
     <div class="container px-6 py-12 mx-auto">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             <div class="sm:col-span-2">
-                <h1 class="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">Subscribe our newsletter to get update.</h1>
+                <h1 id="text1" class="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">Subscribe our newsletter to get update.</h1>
 
                 <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
                     <input id="email" type="text" class="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Email Address">
@@ -31,9 +30,9 @@
                         Subscribe
                     </button>
                 </div>
-            </div><br><br>
+            </div>
 
-            <div>
+            <div id="text2">
                 <p class="font-semibold text-gray-800 dark:text-white">Quick Link</p>
 
                 <div class="flex flex-col items-start mt-5 space-y-2">
@@ -47,7 +46,7 @@
         <hr class="my-6 border-gray-200 md:my-8 dark:border-gray-700">
 
         <div class="flex items-center justify-between">
-            <a href="#">
+            <a id="image" href="#">
                 <img class="w-10 h-10 mb-3" src="/images/logo.png" alt="">
             </a>
 
@@ -87,19 +86,21 @@
     </div>
 </footer>
 </template>
-<script setup>
+<script>
 import Layout from '../Shared/Layout.vue';
-let props = defineProps({
-    articles: Object
-});
+
+export default {
+  props: {
+    articles: Object,
+  },
+  layout:Layout
+};
 </script>
+
 <style scoped>
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: hsl(210, 36%, 96%);
-}
-.Layout{
-  margin:0;
 }
 
 h1 {
@@ -116,19 +117,7 @@ h1 {
     margin-right: auto;
 }
 
-#btns {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
 
-#btns button {
-    margin-left: 2em;
-    padding: 10px 20px;
-    background-color: hsl(210, 36%, 96%);
-    border: 1px solid #c59d5f;
-    border-radius: 6px;
-}
 
 main {
     display: grid;
@@ -172,5 +161,11 @@ label{
 #footer{
     background-color:#c59d5f;
     margin-top:2em;
+}
+#image img{
+  font-size:200px;
+}
+#text2{
+    margin-left:10em;
 }
 </style>
