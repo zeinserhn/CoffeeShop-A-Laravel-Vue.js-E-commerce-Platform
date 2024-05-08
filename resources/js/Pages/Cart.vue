@@ -1,6 +1,6 @@
 <template>
     <Head>
-      <title>Products</title>
+      <title>Cart</title>
     </Head>
     <Layout>
       <div class="flex justify-center mt-4">

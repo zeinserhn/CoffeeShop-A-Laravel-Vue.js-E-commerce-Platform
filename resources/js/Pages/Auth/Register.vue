@@ -1,4 +1,7 @@
 <template>
+    <Head>
+        <title>Register</title>
+    </Head>
     <div class="flex justify-center items-center min-h-screen bg-gray-200">
         <div class="w-full max-w-md bg-white p-6 rounded-md shadow-md">
             <h1 class="text-2xl font-bold mb-4">Registration</h1>

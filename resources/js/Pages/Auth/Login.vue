@@ -1,4 +1,7 @@
 <template>
+    <Head>
+        <title>LogIn</title>
+    </Head>
     <div class="min-h-screen flex items-center justify-center bg-gray-200">
         <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
             <h1 class="text-2xl font-bold mb-4">Login</h1>

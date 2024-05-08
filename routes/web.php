@@ -47,16 +47,22 @@ use App\Http\Controllers\Auth\RegistrationController;
     Route::get('/about',function(){
         return inertia('About');
     });
-    Route::get('/journal',function(){
+    Route::get('/journale',function(){
         $articles=Journale::all();
         return inertia('Journal',[
             'articles'=>$articles
         ]);
     });
+    Route::get('/journale/coffee', function () {
+        $coffee=Journale::all();
+        return inertia('Coffee', [
+            'coffee'=>$coffee
+        ]);
+    });
 
 
 Route::middleware('auth')->group(function () {
-   
+
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::post('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('/profile/updatePassword', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
